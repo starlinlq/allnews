@@ -2,14 +2,14 @@ import {ActionType} from "../action-types"
 import {Action} from "../actions"
 interface State{
     loading: false | true;
-    data: {};
+    data: {articles: { publishedAt: string, url: string, urlToImage: string, source: {id: null | string, name: string | null},title:string, author: string | null, description: string, content: string | null}[], status: string | null, totalResults: number | null};
     error: string | null;
     searchData: {}
 }
 
 const initialState = {
     loading: false,
-    data: {},
+    data: {articles: [], status: "", totalResults: null},
     error: null,
     searchData: {}
 }
@@ -18,11 +18,11 @@ const initialState = {
 const newsReducer = (state: State = initialState, action: Action): State =>{
     switch (action.type) {
         case ActionType.GET_NEWS: 
-        return {loading: true, data: {}, error: null, searchData: {}}
+        return {loading: true, data: {articles: [], status: "", totalResults: null}, error: null, searchData: {}}
         case ActionType.GET_NEWS_SUCCESS:
-            return {...state,loading: false, data: action.payload , error: null, }
+            return {...state,loading: false, data: {articles: action.payload.articles, status: action.payload.status, totalResults: action.payload.totalResults } , error: null, }
         case ActionType.GET_NEWS_ERROR:
-            return{...state, loading: false, data: {}, error: action.payload, }
+            return{...state, loading: false, error: action.payload, }
         case ActionType.SEARCH_ERROR:
             return {...state, loading: false, error: action.payload, }
         case ActionType.SEARCH_SUCCESS: 

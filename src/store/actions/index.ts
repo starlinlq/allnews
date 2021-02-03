@@ -3,7 +3,7 @@ import {ActionType} from "../action-types"
 
 interface GetNewsAction{
     type: ActionType.GET_NEWS_SUCCESS,
-    payload: {},
+    payload: {articles: [], status: string, totalResults: number},
 }
 
 interface GetNewsErrorAction{
