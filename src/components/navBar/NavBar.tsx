@@ -1,5 +1,6 @@
-import { Nav, Wrapper } from "./navBar.elements";
+import { Nav, Wrapper, Section, Divider } from "./navBar.elements";
 import { BsNewspaper } from "react-icons/bs";
+import { Country } from "../";
 const NavBar: React.FC = () => {
   return (
     <>
@@ -7,6 +8,11 @@ const NavBar: React.FC = () => {
         <Wrapper>
           <BsNewspaper />
         </Wrapper>
+        <Divider />
+
+        <Section>
+          <Country />
+        </Section>
       </Nav>
     </>
   );
