@@ -30,4 +30,8 @@ interface SpecificNews{
     payload: string;
 }
 
-export type Action = SearchAction | SearchErrorAction | GetNewsAction | GetNewsErrorAction | GetNews | SpecificNews;
+interface Theme{
+    type: ActionType.SET_THEME,payload: boolean;
+}
+
+export type Action = SearchAction | SearchErrorAction | GetNewsAction | GetNewsErrorAction | GetNews | SpecificNews | Theme;

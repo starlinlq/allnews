@@ -14,6 +14,27 @@ import {
 
 const Article: React.FC = () => {
   const { data } = useTypedSelector((state) => state.newsData);
+  const { loading } = useTypedSelector((state) => state.newsData);
+
+  if (data.articles.length === 0 && !loading) {
+    return (
+      <>
+        <Content>
+          not results found..... Please try another search or collection
+        </Content>
+      </>
+    );
+  }
+
+  if (loading) {
+    return (
+      <>
+        {" "}
+        <Content>Loading...</Content>{" "}
+      </>
+    );
+  }
+
   return (
     <Container>
       {data.articles.map((article) => (
@@ -24,7 +45,14 @@ const Article: React.FC = () => {
                 {" "}
                 <Img src={article.urlToImage} alt={article.title} />
               </div>
-              <div style={{ marginLeft: "2rem" }}>
+              <div
+                style={{
+                  marginLeft: "2rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
+              >
                 {article.author && (
                   <Author>{article.author.slice(0, 12)} </Author>
                 )}
@@ -35,11 +63,17 @@ const Article: React.FC = () => {
                   <Published> {article.publishedAt}</Published>{" "}
                 </Wrapper>
                 <Title>{article.title}</Title>
-                <Description>{article.description}</Description>
-                <a href={article.url} target="_blank">
-                  {" "}
-                  Read More
-                </a>
+                <Description>
+                  {article.description}{" "}
+                  <a
+                    style={{ textDecoration: "none", marginLeft: "10px" }}
+                    href={article.url}
+                    target="_blank"
+                  >
+                    {" "}
+                    Read More
+                  </a>
+                </Description>
               </div>
             </Section>
           )}

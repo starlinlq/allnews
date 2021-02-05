@@ -4,11 +4,19 @@ import {
 
 
 //i need to modify this for dark mode
-export const theme: DefaultTheme = {
-    borderRadius: '5px',
-    colors: {
-        main: 'white',
-        secondary: 'black'
+export const lightTheme: DefaultTheme = {
+   background: "white",
+    fontColor: {
+        main: 'black',
+       
+    }
+}
+
+export const darkTheme: DefaultTheme = {
+   background: "black",
+    fontColor: {
+        main: 'white'
+        
     }
 }
 

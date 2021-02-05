@@ -17,13 +17,17 @@ export const Container = styled.div`
 display: flex;
 flex-wrap:wrap;
 margin-left: 6rem;
-margin-top: 6rem;
+margin-top: 2rem;
  `;
 export const Title = styled.h2`
 width: 510px;
 font-family: 'Merriweather', serif;
+
+
 `;
-export const Content = styled.p``;
+export const Content = styled.p`
+margin-left: 6rem;
+font-size: 2rem;`;
 export const Published = styled(Source)`
 background: none;
 color: black;
@@ -42,8 +46,12 @@ color: grey;`;
 export const Section = styled.div`
 width: fit-content;
 margin: 1rem;
+margin-left: 0;
 display: flex;
+border: 1px solid transparent;
 
-
+&:hover{
+    border-color: black;
+}
 
 `

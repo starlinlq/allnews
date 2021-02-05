@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getNewsData } from "../../store/action-creators";
 import { Container, Wrapper } from "./display.elements";
-import { Topics, Search, Article } from "../";
+import { Topics, Search, Article, Collection } from "../";
 
 const Display: React.FC = () => {
   const dispatch = useDispatch();
@@ -18,7 +18,10 @@ const Display: React.FC = () => {
         <Topics />
         <Search />
       </Container>
-      <Article />
+      <div>
+        <Collection />
+        <Article />
+      </div>
     </Wrapper>
   );
 };

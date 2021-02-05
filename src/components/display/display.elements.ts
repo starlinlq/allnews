@@ -2,11 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 display: flex;
-margin-top: 3rem;
-position: fixed;
+padding-top: 3rem;
 
 `
 
 export const Wrapper = styled.div`
-
+position: relative;
 `;

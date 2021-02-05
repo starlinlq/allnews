@@ -6,7 +6,7 @@ interface Current {
 export const Container  = styled.div`
 display: flex;
 margin-left: 6rem;
-font-size: 1.3rem;
+font-size: 1.4rem;
 
 `
 

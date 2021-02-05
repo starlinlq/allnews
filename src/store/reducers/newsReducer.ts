@@ -4,8 +4,9 @@ interface State{
     loading: false | true;
     data: {articles: { publishedAt: string, url: string, urlToImage: string, source: {id: null | string, name: string | null},title:string, author: string | null, description: string, content: string | null}[], status: string | null, totalResults: number | null};
     error: string | null;
-    searchData: {}
-    currentCountry: string
+    searchData: {};
+    currentCountry: string;
+    theme: boolean;
 }
 
 const initialState = {
@@ -14,6 +15,7 @@ const initialState = {
     error: null,
     searchData: {},
     currentCountry: "us",
+    theme: false,
 }
 
 
@@ -31,6 +33,8 @@ const newsReducer = (state: State = initialState, action: Action): State =>{
         return {...state, loading: false,  error: null, searchData: action.payload}
         case ActionType.GET_SPECIFIC_COUNTRY_SUCCESS:
             return {...state, loading: false, error: null, currentCountry: action.payload }
+        case ActionType.SET_THEME:
+            return {...state, theme: action.payload}
          
 
         default:

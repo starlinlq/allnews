@@ -81,3 +81,9 @@ export const getSpecificNewsByCategory = (term:string) => async (dispatch: Dispa
     }
 
 } 
+
+export const setTheme  = () => (dispatch: Dispatch<Action>, getState: any) =>{
+
+   const {newsData} = getState();
+   dispatch({type: ActionType.SET_THEME, payload: !newsData.theme})
+}

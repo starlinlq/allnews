@@ -1,14 +1,15 @@
 import { Display, NavBar, Layout } from "./components";
 import { ThemeProvider } from "styled-components";
 import { useTypedSelector } from "./hooks/useTypedSelector";
-import { theme } from "./styles/my-theme";
+import { lightTheme, darkTheme } from "./styles/my-theme";
 import { Global } from "./styles/global";
 
 const App: React.FC = () => {
-  const state = useTypedSelector((state) => state);
-  console.log(state);
+  const { theme } = useTypedSelector((state) => state.newsData);
+  console.log(theme);
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme ? darkTheme : lightTheme}>
       <Global />
       <Layout>
         <NavBar />

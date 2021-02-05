@@ -1,4 +1,5 @@
-import { Container, Input, Form, Button, P, Wrapper } from "./search.elements";
+import { Container, Input, Form, Button, Wrapper } from "./search.elements";
+
 import { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { useDispatch } from "react-redux";

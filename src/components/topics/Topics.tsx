@@ -16,8 +16,6 @@ const topicNames: TopicNames = [
   "Sports",
   "Technology",
   "General",
-  "IT",
-  "Trend",
 ];
 const Topics: React.FC = () => {
   const { currentCountry } = useTypedSelector((state) => state.newsData);

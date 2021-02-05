@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-margin-left: 6rem;`;
+margin-left:14rem;
+display: flex;
+align-items: center;`;
 export const Wrapper = styled.div`
 font-size: 1.2rem;
 cursor: pointer;`;
@@ -9,7 +11,8 @@ export const Input = styled.input`
 font-weight: bold;
 border: none;
 border-bottom: 1px solid black;
-padding: 0 7rem;
+width: 36rem;
+text-align: center;
 
 &:focus{
     border: none;
