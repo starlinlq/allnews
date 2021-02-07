@@ -6,7 +6,6 @@ import { Global } from "./styles/global";
 
 const App: React.FC = () => {
   const { theme } = useTypedSelector((state) => state.newsData);
-  console.log(theme);
 
   return (
     <ThemeProvider theme={theme ? darkTheme : lightTheme}>

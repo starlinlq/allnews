@@ -6,7 +6,7 @@ interface Current {
 export const Container  = styled.div`
 display: flex;
 margin-left: 6rem;
-font-size: 1.4rem;
+font-size: 1.2rem;
 
 `
 
@@ -14,7 +14,7 @@ font-size: 1.4rem;
 export const Title = styled.h4<Current>`
 margin: 0 1rem;
 color: grey;
-color: ${({topicName, currentTopic})=> topicName === currentTopic && "black"};
+color: ${({topicName, currentTopic, theme})=> topicName === currentTopic && theme.fontColor.main};
 font-family: 'Roboto', sans-serif;
 cursor: pointer;
 

@@ -22,21 +22,28 @@ margin-top: 2rem;
 export const Title = styled.h2`
 width: 510px;
 font-family: 'Merriweather', serif;
+color: ${({theme})=> theme.fontColor.main};
 
 
 `;
 export const Content = styled.p`
 margin-left: 6rem;
-font-size: 2rem;`;
+font-size: 2rem;
+color: ${({theme}) => theme.fontColor.main};
+
+`;
+
 export const Published = styled(Source)`
 background: none;
-color: black;
-border-color: black;`;
+color: ${({theme})=>theme.fontColor.main};
+border-color:${({theme})=>theme.fontColor.main};
+`;
+
 export const Author = styled.h5`
 font-family: 'Merriweather', serif;
 margin-bottom: 10px;`;
 export const Img = styled.img`
-width: 400px;
+width: 300px;
 height: 250px;
 object-fit: cover`
 export const Description = styled.p`

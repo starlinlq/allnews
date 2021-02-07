@@ -6,3 +6,4 @@ export {default as Search} from "./searchBar/Search"
 export {default as Article} from "./article/Article"
 export {default as Country} from "./countries/Country"
 export {default as Collection} from "./collection/Collection"
+export {default as Home} from './home/Home'
