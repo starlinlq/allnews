@@ -20,7 +20,6 @@ const Display: React.FC = () => {
       </Container>
       <div>
         <Collection />
-        <Home />
         <Article />
       </div>
     </Wrapper>
